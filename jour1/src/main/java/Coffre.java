@@ -1,14 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Coffre {
 
     private int nombreSurLeCadran = 50;
 
-    public int tournerADroite(final int nomBreDeCliques) {
-        nombreSurLeCadran = (100 + nombreSurLeCadran + nomBreDeCliques) % 100;
-        return nombreSurLeCadran;
+    public List<Integer> tournerADroite(final int nomBreDeCliques) {
+        final List<Integer> historique = new ArrayList<>();
+        for (int i = 1; i <= nomBreDeCliques; i++) {
+            nombreSurLeCadran = (100 + nombreSurLeCadran + 1) % 100;
+            historique.add(nombreSurLeCadran);
+        }
+        //   System.out.println(this.nombreSurLeCadran);
+        return historique;
     }
 
-    public int tournerAGauche(final int nomBreDeCliques) {
-        nombreSurLeCadran = (100 + nombreSurLeCadran - nomBreDeCliques) % 100;
-        return nombreSurLeCadran;
+    public List<Integer> tournerAGauche(final int nomBreDeCliques) {
+        final List<Integer> historique = new ArrayList<>();
+        for (int i = 1; i <= nomBreDeCliques; i++) {
+            nombreSurLeCadran = (100 + nombreSurLeCadran - 1) % 100;
+            historique.add(nombreSurLeCadran);
+        }
+        // System.out.println(this.nombreSurLeCadran);
+        return historique;
     }
 }

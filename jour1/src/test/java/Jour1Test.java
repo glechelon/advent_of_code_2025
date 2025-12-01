@@ -15,7 +15,7 @@ class Jour1Test {
         final long password = Main.resolvePassword(cheminFichier);
 
         //THEN
-        Assertions.assertEquals(3L, password);
+        Assertions.assertEquals(6L, password);
 
     }
 
