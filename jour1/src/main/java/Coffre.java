@@ -8,7 +8,7 @@ class Coffre {
     public List<Integer> tournerADroite(final int nomBreDeCliques) {
         final List<Integer> historique = new ArrayList<>();
         for (int i = 1; i <= nomBreDeCliques; i++) {
-            nombreSurLeCadran = (100 + nombreSurLeCadran + 1) % 100;
+            nombreSurLeCadran = ( nombreSurLeCadran + 1) % 100;
             historique.add(nombreSurLeCadran);
         }
         //   System.out.println(this.nombreSurLeCadran);
@@ -18,7 +18,7 @@ class Coffre {
     public List<Integer> tournerAGauche(final int nomBreDeCliques) {
         final List<Integer> historique = new ArrayList<>();
         for (int i = 1; i <= nomBreDeCliques; i++) {
-            nombreSurLeCadran = (100 + nombreSurLeCadran - 1) % 100;
+            nombreSurLeCadran = ( nombreSurLeCadran - 1) % 100;
             historique.add(nombreSurLeCadran);
         }
         // System.out.println(this.nombreSurLeCadran);

@@ -10,23 +10,25 @@ public class Main {
     public static long resolvePassword(String cheminFichier) throws IOException {
 
         final List<String> instructions = Files.readAllLines(Path.of(cheminFichier));
-      //  System.out.println(instructions);
+        //  System.out.println(instructions);
 
         final Coffre coffre = new Coffre();
         final List<Integer> historiqueNombresSurLeCadran = new ArrayList<>();
 
         for (String instruction : instructions) {
-
+            final int nombresDeCliques = Integer.parseInt(instruction.substring(1));
             if (instruction.startsWith("L")) {
-                historiqueNombresSurLeCadran.addAll(coffre.tournerAGauche(Integer.parseInt(instruction.substring(1))));
+                historiqueNombresSurLeCadran.addAll(coffre.tournerAGauche(nombresDeCliques));
             } else if (instruction.startsWith("R")) {
-                historiqueNombresSurLeCadran.addAll(coffre.tournerADroite(Integer.parseInt(instruction.substring(1))));
+                historiqueNombresSurLeCadran.addAll(coffre.tournerADroite(nombresDeCliques));
             }
-         //   System.out.println(historiqueNombresSurLeCadran);
+            //   System.out.println(historiqueNombresSurLeCadran);
         }
 
 
-        return historiqueNombresSurLeCadran.stream().filter(nombre -> nombre.equals(0)).count();
+        return historiqueNombresSurLeCadran.stream()
+                .filter(nombre -> nombre.equals(0))
+                .count();
     }
 
 
