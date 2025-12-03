@@ -15,7 +15,7 @@ class Jour2Test {
         final long password = Main.calculerSommeIdInvalides(cheminFichier);
 
         //THEN
-        Assertions.assertEquals(1227775554, password);
+        Assertions.assertEquals(4174379265L, password);
 
     }
 
